@@ -16,6 +16,17 @@ namespace VideoControl
         {
             MotionDetector detector = new MotionDetector();
             detector.Start();
+
+            var isAborted = false;
+            Console.WriteLine("Press Ctrl+C to quit.");
+            while (!isAborted)
+            {
+                var keyInput = Console.ReadKey();
+                if (keyInput.Key == ConsoleKey.C && (keyInput.Modifiers & ConsoleModifiers.Control) != 0)
+                {
+                    isAborted = true;
+                }
+            }
         }
     }
 }

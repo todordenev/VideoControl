@@ -22,7 +22,7 @@ namespace VideoControl
         public event PictureCapturedHandler PictureCaptured;
         public void Start()
         {
-            _timer = new Timer(TakeImage, null, 0, 2000);
+            _timer = new Timer(TakeImage, null, 0, Constants.TakePictureInterval);
             _fileName = Path.GetTempFileName();
         }
 
